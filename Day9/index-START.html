@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+    //You can inspect and then right click on html element, click Brea on...
+    //The options are for tracking JS events on elements
+
+    // Regular
+    console.log('Hello')
+    // Interpolated    
+    // replaced by template literals
+    console.log('Hello, this is %s example of interpolation', 'the');
+    // Styled
+    console.log('%c Hello, this is a example of styling', 'font-size:20px; background:green;');
+    // warning!
+    console.warn('ON NO!!')
+    // Error :|
+    console.error('Problem!')
+    // Info
+    console.info('information here!')
+
+    // Testing
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains('nope'), 'That is wrong!');
+    // clearing
+
+    // Viewing DOM Elements
+    console.dir(p)
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    // counting
+
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+
+    // timing
+    // console.time('fetching data');
+    // fetch('https://api.github.com/users/wesbos')
+    //   .then(data => data.json())
+    //   .then(data => {
+    //     console.timeEnd('fetching data');
+    //     console.log(data);
+    //   });
+
+    console.table(dogs);
+
+  </script>
+</body>
+</html>
